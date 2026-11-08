@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Archive, Check, Clock3, FileText, Inbox, Link2, Moon, Plus, Sun, Trash2, FolderOpen, ArrowDownToLine } from 'lucide-react'
+import { Check, Clock3, FileText, Inbox, Link2, Moon, Plus, Sun, Trash2, FolderOpen, ArrowDownToLine } from 'lucide-react'
 import type { ArchiveLog, InboxItem, Destination } from './types'
 import { downloadJSON, loadDestinations, loadItems, loadLogs, loadTheme, saveDestinations, saveItems, saveLogs, saveTheme } from './storage'
 
