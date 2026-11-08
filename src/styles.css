@@ -15,3 +15,24 @@
 .conveyor-wrap{border-top:1px solid var(--line);padding:18px 5vw 14px;background:var(--panel)}.conveyor-label{justify-content:space-between;margin-bottom:10px}.conveyor-label small{letter-spacing:0}.conveyor-track{gap:40px;justify-content:center;width:100%;border:1px solid var(--line);background:var(--paper);padding:13px;border-radius:4px}.conveyor-stat{gap:10px}.conveyor-stat b{font:22px Georgia;color:var(--accent)}.conveyor-stat small{font-size:9px;color:var(--muted)}.stat-label{font-size:8px}.footer-note{text-align:center;padding-top:12px;font-size:8px}.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);gap:8px;padding:11px 16px;border-radius:5px;background:#40382e;color:#f8f1e5;box-shadow:var(--shadow);font-size:10px;z-index:10}.toast svg{color:#b4c59e}
 @media(max-width:900px){.workspace{grid-template-columns:175px 1fr}.capture-layout{grid-template-columns:1fr;gap:35px}.tray-column{max-width:460px}.settings-section{grid-template-columns:1fr}}
 @media(max-width:620px){.topbar{height:62px;padding:0 16px}.desk-status{display:none}.workspace{display:block}.sidebar{border-right:0;border-bottom:1px solid var(--line);padding:10px 12px}.side-label,.sidebar-divider,.tray-mini,.sidebar-bottom{display:none}.nav-list{display:flex;gap:4px;overflow-x:auto}.nav-item{white-space:nowrap;padding:9px}.nav-item small{display:none}.main-area{padding:25px 17px 35px}.page-heading h1{font-size:28px}.capture-layout{gap:30px}.paper-note{min-height:280px;padding:20px}.paper-note textarea{height:180px}.sorting-floor{grid-template-columns:1fr 1fr}.triage-paper{grid-column:1/-1;grid-row:1}.bin-later{grid-column:1;grid-row:2}.bin-archive{grid-column:2;grid-row:2}.bin-trash{grid-column:1/-1;grid-row:3}.archive-header{align-items:flex-start;flex-direction:column;gap:15px}.log-table-head,.log-row{grid-template-columns:1.2fr .8fr}.log-table-head span:last-child,.log-row time{display:none}.conveyor-track{gap:15px;justify-content:space-around}.conveyor-stat{gap:5px;flex-direction:column}.conveyor-stat b{font-size:17px}.footer-note{display:none}}
+
+/* --- 部署加固：窄屏不横向溢出 + 触屏点击区域（追加规则，不改动原有视觉） --- */
+.triage-paper h2,.stack-paper{overflow-wrap:anywhere}
+@media(max-width:900px){
+  /* 621–900px 时原三列分拣台宽度超过内容区，改为两列 + 整行便签 */
+  .sorting-floor{grid-template-columns:1fr 1fr;gap:14px}
+  .triage-paper{grid-column:1/-1;grid-row:1}
+  .bin-later{grid-column:1;grid-row:2}
+  .bin-archive{grid-column:2;grid-row:2}
+  .bin-trash{grid-column:1/-1;grid-row:3;min-height:56px}
+  .conveyor-track{gap:16px}
+}
+@media(max-width:620px){
+  /* 触屏最小点击区域 44px，避免导航与按钮过密 */
+  .nav-item{min-height:44px;padding:10px 12px}
+  .icon-button{width:44px;height:44px}
+  .primary-button,.export-button,.add-destination button,.remove-button{min-height:44px}
+  .capture-actions{flex-wrap:wrap;gap:12px}
+  .sort-bin{min-height:72px}
+  .theme-options button{min-height:96px}
+}
